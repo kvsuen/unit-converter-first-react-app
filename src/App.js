@@ -1,14 +1,15 @@
 import React from 'react';
 import Header from './Header'
 import NavigationTabs from './NavigationTabs'
-import InputForms from './InputForms'
+import InputConversion from './InputConversion'
 
 function App() {
   return (
     <div>
       <Header />
       <NavigationTabs />
-      <InputForms />
+      <br />
+      <InputConversion />
     </div>
   );
 }
