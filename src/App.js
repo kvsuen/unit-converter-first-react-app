@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header'
 import NavigationTabs from './NavigationTabs'
 import InputConversion from './InputConversion'
-import {Container, Row, Col, Nav} from 'react-bootstrap'
+import {Container, Row, Col} from 'react-bootstrap'
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
       <Row>
         <Col>
           <NavigationTabs />
+          <br />
         </Col>
       </Row>
       <Row>
