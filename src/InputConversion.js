@@ -3,9 +3,16 @@ import Select from 'react-select'
 import {Row, Col} from 'react-bootstrap'
 
 const options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' },
+  { value: 'meter', label: 'Meter' },
+  { value: 'millimeter', label: 'Millimeter' },
+  { value: 'inch', label: 'Inch' },
+  { value: 'feet', label: 'Feet' },
+  { value: 'mile', label: 'Mile' },
+  { value: 'kilogram', label: 'Kilogram' },
+  { value: 'newton', label: 'Newton' },
+  { value: 'kilonewton', label: 'Kilonewton' },
+  { value: 'pound', label: 'Pound' },
+  { value: 'pound-force', label: 'Pound-force' },
 ];
 
 class InputConversion extends React.Component {
@@ -49,7 +56,6 @@ class InputConversion extends React.Component {
             placeholder="Output"
             readonly="readonly"
           />
-
           <Select
             name="outputUnit"
             value={outputUnit}
