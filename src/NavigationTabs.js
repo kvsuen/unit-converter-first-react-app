@@ -5,8 +5,8 @@ import Nav from 'react-bootstrap/Nav'
 
 function NavigationTabs() {
   return (
-    <div className="center-navbar">
-      <Navbar bg="dark" variant="dark" expand="lg">
+    <div>
+      <Navbar bg="primary" variant="dark" expand="lg">
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="mx-auto" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto">
