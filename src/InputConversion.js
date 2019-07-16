@@ -3,16 +3,16 @@ import Select from 'react-select'
 import {Row, Col} from 'react-bootstrap'
 
 const options = [
-  { value: 'meter', label: 'Meter' },
-  { value: 'millimeter', label: 'Millimeter' },
-  { value: 'inch', label: 'Inch' },
-  { value: 'feet', label: 'Feet' },
-  { value: 'mile', label: 'Mile' },
-  { value: 'kilogram', label: 'Kilogram' },
-  { value: 'newton', label: 'Newton' },
-  { value: 'kilonewton', label: 'Kilonewton' },
-  { value: 'pound', label: 'Pound' },
-  { value: 'pound-force', label: 'Pound-force' },
+  { value: 'meter [m]', label: 'Meter [m]' },
+  { value: 'millimeter [mm]', label: 'Millimeter [mm]' },
+  { value: 'inch [in]', label: 'Inch [in]' },
+  { value: 'feet [ft]', label: 'Feet [ft]' },
+  { value: 'mile [mi]', label: 'Mile [mi]' },
+  { value: 'kilogram [kg]', label: 'Kilogram [kg]' },
+  { value: 'newton [N]', label: 'Newton [N]' },
+  { value: 'kilonewton [kN]', label: 'Kilonewton [kN]' },
+  { value: 'pound [lb]', label: 'Pound [lb]' },
+  { value: 'pound-force [lbf]', label: 'Pound-force [lbf]' },
 ];
 
 class InputConversion extends React.Component {
