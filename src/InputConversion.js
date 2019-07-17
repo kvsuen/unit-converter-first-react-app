@@ -22,11 +22,13 @@ const options = [
 //   }),
 // }
 
+//leaving this as a class component for future example
+//on how to use state/props from a parent class component
 class InputConversion extends React.Component {
  
   render() {
-    const { inputUnit } = this.props;
-    const { outputUnit } = this.props;
+    const { inputUnit } = this.props.data;
+    const { outputUnit } = this.props.data;
 
     return (
       <Row noGutters>
@@ -36,6 +38,7 @@ class InputConversion extends React.Component {
         </Col>
         <Col xs={12} lg={2}>
           <input
+            name="inputText"
             type="text"
             className="inputs"
             placeholder="Enter value"
@@ -59,6 +62,7 @@ class InputConversion extends React.Component {
         </Col>
         <Col xs={12} lg={2}>
           <input
+            name="outputText"
             type="text"
             className="inputs"
             placeholder="Output"
