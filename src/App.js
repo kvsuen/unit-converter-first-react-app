@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header'
 import NavigationTabs from './NavigationTabs'
-import InputConversion from './InputConversion'
+import InputContainer from './InputContainer'
 import {Container, Row, Col} from 'react-bootstrap'
 import DetConversionFactor from './DetConversionFactor'
 
@@ -57,6 +57,29 @@ class App extends React.Component {
         this.setState({ outputValue: this.state.inputValue * this.state.conversionFactor})
     })
   }
+
+  //swap unit button
+  handleSwapUnitButton = () => {
+    const tempInputUnit = this.state.inputUnit
+    const tempOutputUnit = this.state.outputUnit
+    this.setState({ inputUnit: tempOutputUnit }, 
+      function () {
+        this.setState({ outputUnit: tempInputUnit },
+          function() {
+            this.setState({ conversionFactor: DetConversionFactor(this.state.inputUnit, this.state.outputUnit)},
+              function () {
+              this.setState({ outputValue: this.state.inputValue * this.state.conversionFactor})
+              })
+          })  
+      })
+  }
+
+  handleCopy = () => {
+    var copyText = document.getElementById("outputCopy")
+    copyText.select()
+    document.execCommand("copy")
+  }
+
   render () {
     return (
       <Container fluid>
@@ -73,9 +96,11 @@ class App extends React.Component {
         </Row>
         <Row>
           <Col>
-            <InputConversion 
+            <InputContainer 
               handleChange={this.handleChange} 
               handleInputChange={this.handleInputChange} 
+              handleSwapUnitButton={this.handleSwapUnitButton}
+              handleCopy={this.handleCopy}
               data={this.state}
             />
           </Col>
