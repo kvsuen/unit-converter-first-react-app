@@ -15,51 +15,62 @@ const options = [
   { value: 'pound-force [lbf]', label: 'Pound-force [lbf]' },
 ];
 
-class InputConversion extends React.Component {
-  state = {
-    inputUnit: null,
-    outputUnit: null,
-  };
+// const customStyles = {
+//   container: () => ({
+//     display: "inline-block",
+//     width: "100%"
+//   }),
+// }
 
-  handleChange = (selectedOption, event) => {
-    const { name } = event
-    console.log(event)
-    this.setState({ [name]: selectedOption });
-  };
-  
+class InputConversion extends React.Component {
+ 
   render() {
-    const { inputUnit } = this.state;
-    const { outputUnit } = this.state;
+    const { inputUnit } = this.props;
+    const { outputUnit } = this.props;
 
     return (
-      <Row style={{textAlign:"center"}}>
+      <Row noGutters>
         <Col>
         </Col>
         <Col>
         </Col>
-        <Col xs={12} sm={4} lg={3}>
+        <Col xs={12} lg={2}>
           <input
+            type="text"
             className="inputs"
             placeholder="Enter value"
           />
+        </Col>
+        <Col xs={12} lg={2}>
           <Select
             name="inputUnit"
             value={inputUnit}
-            onChange={this.handleChange}
+            onChange={this.props.handleChange}
             options={options}
             placeholder="Unit"
           />
         </Col>
-        <Col xs={12} sm={4} lg={3}>
+        <Col 
+          xs={12} 
+          style={{
+            msFlex: "0 0 50px",
+            flex: "0 0 50px",
+          }}>
+        </Col>
+        <Col xs={12} lg={2}>
           <input
+            type="text"
             className="inputs"
             placeholder="Output"
-            readonly="readonly"
+            readOnly="readOnly"
+            style={{backgroundColor: "rgb(245, 245, 245)"}}
           />
+        </Col>
+        <Col xs={12} lg={2}>
           <Select
             name="outputUnit"
             value={outputUnit}
-            onChange={this.handleChange}
+            onChange={this.props.handleChange}
             options={options}
             placeholder="Unit"
           />
