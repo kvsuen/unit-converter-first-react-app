@@ -27,8 +27,8 @@ const options = [
 class InputConversion extends React.Component {
  
   render() {
-    const { inputUnit } = this.props.data;
-    const { outputUnit } = this.props.data;
+    const { inputUnit, inputValue } = this.props.data;
+    const { outputUnit, outputValue } = this.props.data;
 
     return (
       <Row noGutters>
@@ -38,10 +38,12 @@ class InputConversion extends React.Component {
         </Col>
         <Col xs={12} lg={2}>
           <input
-            name="inputText"
+            name="inputValue"
             type="text"
+            value={inputValue}
             className="inputs"
             placeholder="Enter value"
+            onChange={this.props.handleInputChange}
           />
         </Col>
         <Col xs={12} lg={2}>
@@ -62,8 +64,9 @@ class InputConversion extends React.Component {
         </Col>
         <Col xs={12} lg={2}>
           <input
-            name="outputText"
+            name="outputValue"
             type="text"
+            value={outputValue}
             className="inputs"
             placeholder="Output"
             readOnly="readOnly"
