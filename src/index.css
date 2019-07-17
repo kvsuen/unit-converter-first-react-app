@@ -15,7 +15,6 @@ header {
   transition: all 100ms;
   padding: 2px 8px;
   color: hsl(0,0%,20%);
-  margin-right: 2px;
   top: 50%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
