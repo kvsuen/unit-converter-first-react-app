@@ -19,12 +19,12 @@ function NavigationTabs(props) {
               <NavDropdown.Item name="kilogram [kg] pound [lb]" onClick={props.handleClick}>Kilogram [kg] to Pound [lb]</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown className="mx-auto" title="Force" id="basic-nav-dropdown">
-              <NavDropdown.Item name="newton [N] pound Force [lbf]" onClick={props.handleClick}>Newton [N] to Pound Force [lbf]</NavDropdown.Item>
-              <NavDropdown.Item name="kilonewton [kN] pound Force [lbf]" onClick={props.handleClick}>Kilonewton [kN] to Pound Force [lbf]</NavDropdown.Item>
+              <NavDropdown.Item name="newton [N] pound-force [lbf]" onClick={props.handleClick}>Newton [N] to Pound Force [lbf]</NavDropdown.Item>
+              <NavDropdown.Item name="kilonewton [kN] pound-force [lbf]" onClick={props.handleClick}>Kilonewton [kN] to Pound Force [lbf]</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown className="mx-auto" title="Temperature" id="basic-nav-dropdown">
-              <NavDropdown.Item name="Celcius [&#x2103;] Fahrenheit [&#x2109;]" onClick={props.handleClick}>Celcius [&#x2103;] to Fahrenheit [&#x2109;]</NavDropdown.Item>
-              <NavDropdown.Item name="Fahrenheit [&#x2109;] Celcius [&#x2103;]" onClick={props.handleClick}>Fahrenheit [&#x2109;] to Celcius [&#x2103;]</NavDropdown.Item>
+              <NavDropdown.Item name="celcius [&deg;C] fahrenheit [&deg;F]" onClick={props.handleClick}>Celcius [&deg;C] to Fahrenheit [&deg;F]</NavDropdown.Item>
+              <NavDropdown.Item name="fahrenheit [&deg;F] celcius [&deg;C]" onClick={props.handleClick}>Fahrenheit [&deg;F] to Celcius [&deg;C]</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

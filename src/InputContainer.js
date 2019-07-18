@@ -13,10 +13,12 @@ const options = [
   { value: 'feet [ft]', label: 'Feet [ft]' },
   { value: 'mile [mi]', label: 'Mile [mi]' },
   { value: 'kilogram [kg]', label: 'Kilogram [kg]' },
+  { value: 'pound [lb]', label: 'Pound [lb]' },
   { value: 'newton [N]', label: 'Newton [N]' },
   { value: 'kilonewton [kN]', label: 'Kilonewton [kN]' },
-  { value: 'pound [lb]', label: 'Pound [lb]' },
   { value: 'pound-force [lbf]', label: 'Pound-force [lbf]' },
+  { value: 'celcius [\xB0C]', label: 'Celcius [\xB0C]' },
+  { value: 'fahrenheit [\xB0F]', label: 'Fahrenheit [\xB0F]' }
 ];
 
 // const customStyles = {
