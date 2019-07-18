@@ -8,10 +8,10 @@ import DetConversionFactor from './DetConversionFactor'
 class App extends React.Component {
   state = {
     inputUnit: {value: "meter [m]", label: "Meter [m]"},
-    outputUnit: {value: "meter [m]", label: "Meter [m]"},
+    outputUnit: {value: "millimeter [mm]", label: "Millimeter [mm]"},
     inputValue: "",
     outputValue: "",
-    conversionFactor: 1
+    conversionFactor: 1000
   };
 
   //when nav button is selected
@@ -74,6 +74,7 @@ class App extends React.Component {
       })
   }
 
+  //copy to clipboard function
   handleCopy = () => {
     var copyText = document.getElementById("outputCopy")
     copyText.select()
