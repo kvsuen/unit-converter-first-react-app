@@ -32,17 +32,18 @@ class InputContainer extends React.Component {
  
   render() {
     return (
+      //1 Row, 7 columns (with nested columns for input/output textboxes)
       <Row noGutters style={{justifyContent:"center", alignItems:"center"}}>
         <Col>
         </Col>
         <Col>
         </Col>
         {/* ### USER INPUT VALUE TO BE CONVERTED AND UNIT ###*/}
-        <Col xs={12} md={2}>
-          <InputTextComponent handleInputChange={this.props.handleInputChange} data={this.props.data}/>
-        </Col>
-        <Col xs={12} md={2}>
-          <InputUnitComponent handleChange={this.props.handleChange} data={this.props.data} options={options}/>
+        <Col xs={12} md={4} lg={3} style={{textAlign:"center"}}>
+          <Col xs={8} sm={6} md={12} style={{display:"inline-block"}}>
+            <InputTextComponent handleInputChange={this.props.handleInputChange} data={this.props.data}/>
+            <InputUnitComponent handleChange={this.props.handleChange} data={this.props.data} options={options}/>
+          </Col>
         </Col>
 
         {/* ### SWAP UNIT BUTTON ### */}
@@ -57,11 +58,11 @@ class InputContainer extends React.Component {
         </Col>
 
         {/* ### OUTPUT TEXTBOT AND OUTPUT UNIT ### */}
-        <Col xs={12} md={2} style={{height:"38px"}}>
-          <OutputTextComponent handleCopy={this.props.handleCopy} data={this.props.data}/>
-        </Col>
-        <Col xs={12} md={2}>
-          <OutputUnitComponent handleChange={this.props.handleChange} data={this.props.data} options={options}/>
+        <Col xs={12} md={4} lg={3} style={{textAlign:"center"}}>
+          <Col xs={8} sm={6} md={12} style={{display:"inline-block"}} >
+            <OutputTextComponent handleCopy={this.props.handleCopy} data={this.props.data}/>
+            <OutputUnitComponent handleChange={this.props.handleChange} data={this.props.data} options={options}/>
+          </Col>
         </Col>
         <Col>
         </Col>

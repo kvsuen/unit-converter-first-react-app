@@ -7,7 +7,7 @@ const OutputTextComponent = (props) => {
   const { outputValue } = props.data;
 
   return ( 
-    <InputGroup className="mb-3">
+    <InputGroup>
       <FormControl
         id="outputCopy"
         name="outputValue"
@@ -22,7 +22,7 @@ const OutputTextComponent = (props) => {
         <Button 
           variant="outline-secondary" 
           onClick={props.handleCopy}
-          style={{borderColor: "rgb(204, 204, 204)"}}>
+          style={{borderColor: "rgb(204, 204, 204)", paddingLeft: "10px", paddingRight: "10px"}}>
           <span role="img" aria-label="copy">&#128203;</span>
         </Button>
       </InputGroup.Append>
