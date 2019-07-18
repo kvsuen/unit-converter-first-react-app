@@ -5,6 +5,11 @@ import FormControl from 'react-bootstrap/FormControl'
 
 const OutputTextComponent = (props) => {
   const { outputValue } = props.data;
+  let outputValueAdjusted = "Error";
+
+  if (!isNaN(outputValue)) {
+    outputValueAdjusted = outputValue
+  }
 
   return ( 
     <InputGroup>
@@ -12,7 +17,7 @@ const OutputTextComponent = (props) => {
         id="outputCopy"
         name="outputValue"
         type="text"
-        value={outputValue}
+        value={outputValueAdjusted}
         className="inputs"
         placeholder="Output"
         readOnly="readOnly"
