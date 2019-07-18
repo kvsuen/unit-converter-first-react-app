@@ -22,6 +22,10 @@ function NavigationTabs(props) {
               <NavDropdown.Item name="newton [N] pound Force [lbf]" onClick={props.handleClick}>Newton [N] to Pound Force [lbf]</NavDropdown.Item>
               <NavDropdown.Item name="kilonewton [kN] pound Force [lbf]" onClick={props.handleClick}>Kilonewton [kN] to Pound Force [lbf]</NavDropdown.Item>
             </NavDropdown>
+            <NavDropdown className="mx-auto" title="Temperature" id="basic-nav-dropdown">
+              <NavDropdown.Item name="Celcius [&#x2103;] Fahrenheit [&#x2109;]" onClick={props.handleClick}>Celcius [&#x2103;] to Fahrenheit [&#x2109;]</NavDropdown.Item>
+              <NavDropdown.Item name="Fahrenheit [&#x2109;] Celcius [&#x2103;]" onClick={props.handleClick}>Fahrenheit [&#x2109;] to Celcius [&#x2103;]</NavDropdown.Item>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
