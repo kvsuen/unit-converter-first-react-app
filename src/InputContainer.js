@@ -1,9 +1,10 @@
 import React from 'react'
-import Select from 'react-select'
 import {Row, Col} from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
-import InputGroup from 'react-bootstrap/InputGroup'
-import FormControl from 'react-bootstrap/FormControl'
+import InputTextComponent from './InputTextComponent'
+import InputUnitComponent from './InputUnitComponent'
+import OutputTextComponent from './OutputTextComponent'
+import OutputUnitComponent from './OutputUnitComponent'
 
 const options = [
   { value: 'meter [m]', label: 'Meter [m]' },
@@ -30,34 +31,21 @@ const options = [
 class InputContainer extends React.Component {
  
   render() {
-    const { inputUnit, inputValue } = this.props.data;
-    const { outputUnit, outputValue } = this.props.data;
-
     return (
       <Row noGutters style={{justifyContent:"center", alignItems:"center"}}>
         <Col>
         </Col>
         <Col>
         </Col>
-        <Col xs={12} lg={2}>
-          <input
-            name="inputValue"
-            type="text"
-            value={inputValue}
-            className="inputs"
-            placeholder="Enter value"
-            onChange={this.props.handleInputChange}
-          />
+        {/* ### USER INPUT VALUE TO BE CONVERTED AND UNIT ###*/}
+        <Col xs={12} md={2}>
+          <InputTextComponent handleInputChange={this.props.handleInputChange} data={this.props.data}/>
         </Col>
-        <Col xs={12} lg={2}>
-          <Select
-            name="inputUnit"
-            value={inputUnit}
-            onChange={this.props.handleChange}
-            options={options}
-            placeholder="Unit"
-          />
+        <Col xs={12} md={2}>
+          <InputUnitComponent handleChange={this.props.handleChange} data={this.props.data} options={options}/>
         </Col>
+
+        {/* ### SWAP UNIT BUTTON ### */}
         <Col 
           xs={12} 
           style={{
@@ -67,36 +55,13 @@ class InputContainer extends React.Component {
           }}>
           <Button variant="primary" size="sm" onClick={this.props.handleSwapUnitButton}>&#x21CC;</Button>
         </Col>
-        <Col xs={12} lg={2} style={{height:"38px"}}>
-          <InputGroup className="mb-3">
-            <FormControl
-              id="outputCopy"
-              name="outputValue"
-              type="text"
-              value={outputValue}
-              className="inputs"
-              placeholder="Output"
-              readOnly="readOnly"
-              style={{backgroundColor: "rgb(245, 245, 245)"}}
-            />
-            <InputGroup.Append>
-              <Button 
-                variant="outline-secondary" 
-                onClick={this.props.handleCopy}
-                style={{borderColor: "rgb(204, 204, 204)"}}>
-                <span role="img" aria-label="copy">&#128203;</span>
-              </Button>
-            </InputGroup.Append>
-          </InputGroup>
+
+        {/* ### OUTPUT TEXTBOT AND OUTPUT UNIT ### */}
+        <Col xs={12} md={2} style={{height:"38px"}}>
+          <OutputTextComponent handleCopy={this.props.handleCopy} data={this.props.data}/>
         </Col>
-        <Col xs={12} lg={2}>
-          <Select
-            name="outputUnit"
-            value={outputUnit}
-            onChange={this.props.handleChange}
-            options={options}
-            placeholder="Unit"
-          />
+        <Col xs={12} md={2}>
+          <OutputUnitComponent handleChange={this.props.handleChange} data={this.props.data} options={options}/>
         </Col>
         <Col>
         </Col>
