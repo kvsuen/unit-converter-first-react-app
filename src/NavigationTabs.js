@@ -7,9 +7,10 @@ function NavigationTabs(props) {
   return (
     <div>
       <Navbar bg="primary" variant="dark" expand="md">
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className="mx-auto" />
+        <Navbar.Brand>Unit Converter</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mx-auto">
+          <Nav>
             <NavDropdown className="mx-auto" title="Length" id="basic-nav-dropdown">
               <NavDropdown.Item name="meter [m] mile [mi]" onClick={props.handleClick}>Meter [m] to Mile [mi]</NavDropdown.Item>
               <NavDropdown.Item name="millimeter [mm] inch [in]" onClick={props.handleClick}>Millimeter [mm] to Inch [in]</NavDropdown.Item>

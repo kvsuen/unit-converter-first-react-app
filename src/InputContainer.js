@@ -41,27 +41,21 @@ class InputContainer extends React.Component {
         <Col>
         </Col>
         {/* ### USER INPUT VALUE TO BE CONVERTED AND UNIT ###*/}
-        <Col xs={12} md={4} lg={3} style={{textAlign:"center"}}>
-          <Col xs={8} sm={6} md={12} style={{display:"inline-block"}}>
+        <Col xs={12} sm={12} md={5} lg={4} style={{textAlign:"center"}}>
+          <Col xs={8} sm={7} md={12} style={{display:"inline-block"}}>
             <InputTextComponent handleInputChange={this.props.handleInputChange} data={this.props.data}/>
             <InputUnitComponent handleChange={this.props.handleChange} data={this.props.data} options={options}/>
           </Col>
         </Col>
 
         {/* ### SWAP UNIT BUTTON ### */}
-        <Col 
-          xs={12} 
-          style={{
-            msFlex: "0 0 50px",
-            flex: "0 0 50px",
-            textAlign: "center"
-          }}>
+        <Col className="middle-button" xs={12}>
           <Button variant="primary" size="sm" onClick={this.props.handleSwapUnitButton}>&#x21CC;</Button>
         </Col>
 
         {/* ### OUTPUT TEXTBOT AND OUTPUT UNIT ### */}
-        <Col xs={12} md={4} lg={3} style={{textAlign:"center"}}>
-          <Col xs={8} sm={6} md={12} style={{display:"inline-block"}} >
+        <Col xs={12} sm={12} md={5} lg={4} style={{textAlign:"center"}}>
+          <Col xs={8} sm={7} md={12} style={{display:"inline-block"}} >
             <OutputTextComponent handleCopy={this.props.handleCopy} data={this.props.data}/>
             <OutputUnitComponent handleChange={this.props.handleChange} data={this.props.data} options={options}/>
           </Col>

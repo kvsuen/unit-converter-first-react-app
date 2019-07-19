@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './Header'
 import NavigationTabs from './NavigationTabs'
 import InputContainer from './InputContainer'
 import {Container, Row, Col} from 'react-bootstrap'
@@ -12,7 +11,7 @@ class App extends React.Component {
     inputValue: "",
     outputValue: "",
     conversionFactor: 1000
-  };
+  }
 
   //when nav button is selected
   handleClick = (event) => {
@@ -83,14 +82,9 @@ class App extends React.Component {
 
   render () {
     return (
-      <Container fluid>
-        <Row style={{textAlign:"center"}}>
-          <Col>
-            <Header />
-          </Col>
-        </Row>
+      <Container className="main-container">
         <Row>
-          <Col>
+          <Col xs={12} style={{paddingLeft:0, paddingRight:0}}>
             <NavigationTabs handleClick={this.handleClick} />
             <br />
           </Col>
@@ -104,11 +98,12 @@ class App extends React.Component {
               handleCopy={this.handleCopy}
               data={this.state}
             />
+            <br />
           </Col>
         </Row>
       </Container>
-    );
+    )
   }
 }
 
-export default App;
+export default App

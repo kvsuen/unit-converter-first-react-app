@@ -12,7 +12,7 @@ const OutputTextComponent = (props) => {
     if (props.data.inputUnit.value === "celcius [\xB0C]" && props.data.outputUnit.value === "fahrenheit [\xB0F]") {
       outputValueAdjusted = outputValueAdjusted * 9/5 + 32
     } else if (props.data.inputUnit.value === "fahrenheit [\xB0F]" && props.data.outputUnit.value === "celcius [\xB0C]") {
-      outputValueAdjusted = (outputValueAdjusted - 32) * 5/9
+        outputValueAdjusted = (outputValueAdjusted - 32) * 5/9
     }
   }
 
