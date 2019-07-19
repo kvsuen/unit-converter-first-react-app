@@ -13,6 +13,7 @@ export default function DetConversionFactor(unitOne, unitTwo) {
   //the row and column is correlated to the coversion factor
 
   //there is an array for each unit type
+  //new data should be added below to UnitTypes and UnitConversions
   const unitTypes = [
     //length
     ["meter [m]", "millimeter [mm]", "inch [in]", "feet [ft]", "mile [mi]"],

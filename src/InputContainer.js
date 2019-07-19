@@ -6,6 +6,7 @@ import InputUnitComponent from './InputUnitComponent'
 import OutputTextComponent from './OutputTextComponent'
 import OutputUnitComponent from './OutputUnitComponent'
 
+// options can be added here
 const options = [
   { value: 'meter [m]', label: 'Meter [m]' },
   { value: 'millimeter [mm]', label: 'Millimeter [mm]' },
@@ -21,6 +22,7 @@ const options = [
   { value: 'fahrenheit [\xB0F]', label: 'Fahrenheit [\xB0F]' }
 ];
 
+// example to style react-select
 // const customStyles = {
 //   container: () => ({
 //     display: "inline-block",

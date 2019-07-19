@@ -11,6 +11,7 @@ function NavigationTabs(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
+            {/* new unit types and predefined conversions are added here*/}
             <NavDropdown className="mx-auto" title="Length" id="basic-nav-dropdown">
               <NavDropdown.Item name="meter [m] mile [mi]" onClick={props.handleClick}>Meter [m] to Mile [mi]</NavDropdown.Item>
               <NavDropdown.Item name="millimeter [mm] inch [in]" onClick={props.handleClick}>Millimeter [mm] to Inch [in]</NavDropdown.Item>

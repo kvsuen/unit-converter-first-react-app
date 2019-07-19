@@ -4,6 +4,11 @@ import InputContainer from './InputContainer'
 import {Container, Row, Col} from 'react-bootstrap'
 import DetConversionFactor from './DetConversionFactor'
 
+//App renders two main components: navbar and input container
+//Navbar has predetermined unit conversions (sorted by type)
+//Input container contains the input/output value & units
+//New units are to be added to InputContainer and DetConversionFactor
+
 class App extends React.Component {
   state = {
     inputUnit: {value: "meter [m]", label: "Meter [m]"},
@@ -14,6 +19,8 @@ class App extends React.Component {
   }
 
   //when nav button is selected
+  //sets input and output unit based on selection
+  //performs conversion factor determination and calculates outputValue
   handleClick = (event) => {
     const {name} = event.target
     const firstUnit = name.slice(0, name.search("]") + 1)
@@ -35,6 +42,8 @@ class App extends React.Component {
   }  
   
   //when select unit box is used
+  //sets unit based on selection
+  //performs conversion factor determination and calculates outputValue
   handleChange = (selectedOption, event) => {
     const { name } = event
     this.setState({ [name]: selectedOption }, 
@@ -49,6 +58,7 @@ class App extends React.Component {
   };
 
   //when input textbox is used
+  //performs conversion factor determination and calculates outputValue
   handleInputChange = (event) => {
     const {name, value} = event.target
     this.setState({ [name]: value }, 
@@ -58,6 +68,7 @@ class App extends React.Component {
   }
 
   //swap unit button
+  //performs conversion factor determination and calculates outputValue
   handleSwapUnitButton = () => {
     const tempInputUnit = this.state.inputUnit
     const tempOutputUnit = this.state.outputUnit
