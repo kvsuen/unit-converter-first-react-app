@@ -42,7 +42,7 @@ const OutputTextComponent = (props) => {
         <Button 
           variant="outline-secondary" 
           onClick={props.handleCopy}
-          style={{borderColor: "rgb(204, 204, 204)", paddingLeft: "10px", paddingRight: "10px"}}>
+          style={{borderColor: "rgb(204, 204, 204)", paddingLeft: "10px", paddingRight: "10px", zIndex: 0}}>
           <span role="img" aria-label="copy">&#128203;</span>
         </Button>
       </InputGroup.Append>
