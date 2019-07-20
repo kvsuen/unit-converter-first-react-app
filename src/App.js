@@ -33,11 +33,12 @@ class App extends React.Component {
       value: secondUnit,
       label: secondUnit.charAt(0).toUpperCase() + secondUnit.slice(1)
     }
-    this.setState({ inputUnit: firstUnitObject})
-    this.setState({ outputUnit: secondUnitObject})
-    this.setState({ conversionFactor: DetConversionFactor(firstUnitObject, secondUnitObject)}, 
-      function () {
-        this.setState({ outputValue: this.state.inputValue * this.state.conversionFactor})
+    const tempFactor = DetConversionFactor(firstUnitObject, secondUnitObject)
+    this.setState({ 
+      inputUnit: firstUnitObject,
+      outputUnit: secondUnitObject,
+      conversionFactor: tempFactor,
+      outputValue: this.state.inputValue * tempFactor
     })
   }  
   
@@ -47,41 +48,36 @@ class App extends React.Component {
   handleChange = (selectedOption, event) => {
     const { name } = event
     this.setState({ [name]: selectedOption }, 
-      function () {
       //setState does not immediate mutate this.state, but creates a pending state transition
       //passing in another function as a callback causes it to execute after the state change occurs
-        this.setState({ conversionFactor: DetConversionFactor(this.state.inputUnit, this.state.outputUnit)},
-        function () {
-          this.setState({ outputValue: this.state.inputValue * this.state.conversionFactor})
+      function () {
+        const tempFactor =  DetConversionFactor(this.state.inputUnit, this.state.outputUnit)
+        this.setState({ 
+          conversionFactor: tempFactor,
+          outputValue: this.state.inputValue * tempFactor
         })
-    })
-  };
-
+      })
+  }
+    
   //when input textbox is used
   //performs conversion factor determination and calculates outputValue
   handleInputChange = (event) => {
     const {name, value} = event.target
-    this.setState({ [name]: value }, 
-      function () {
-        this.setState({ outputValue: this.state.inputValue * this.state.conversionFactor})
-    })
+    this.setState({ 
+      [name]: value,
+      outputValue: value * this.state.conversionFactor
+    }) 
   }
 
   //swap unit button
   //performs conversion factor determination and calculates outputValue
-  handleSwapUnitButton = () => {
-    const tempInputUnit = this.state.inputUnit
-    const tempOutputUnit = this.state.outputUnit
-    this.setState({ inputUnit: tempOutputUnit }, 
-      function () {
-        this.setState({ outputUnit: tempInputUnit },
-          function() {
-            this.setState({ conversionFactor: DetConversionFactor(this.state.inputUnit, this.state.outputUnit)},
-              function () {
-              this.setState({ outputValue: this.state.inputValue * this.state.conversionFactor})
-              })
-          })  
-      })
+  handleSwapUnit = () => {
+    this.setState({ 
+      inputUnit: this.state.outputUnit, 
+      outputUnit: this.state.inputUnit, 
+      conversionFactor: DetConversionFactor(this.state.outputUnit, this.state.inputUnit),
+      outputValue: this.state.inputValue * DetConversionFactor(this.state.outputUnit, this.state.inputUnit)
+    })
   }
 
   //copy to clipboard function
@@ -105,7 +101,7 @@ class App extends React.Component {
             <InputContainer 
               handleChange={this.handleChange} 
               handleInputChange={this.handleInputChange} 
-              handleSwapUnitButton={this.handleSwapUnitButton}
+              handleSwapUnit={this.handleSwapUnit}
               handleCopy={this.handleCopy}
               data={this.state}
             />
