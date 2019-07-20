@@ -52,7 +52,7 @@ class InputContainer extends React.Component {
 
         {/* ### SWAP UNIT BUTTON ### */}
         <Col className="middle-button" xs={12}>
-          <Button variant="primary" size="sm" onClick={this.props.handleSwapUnitButton}>&#x21CC;</Button>
+          <Button variant="primary" size="sm" onClick={this.props.handleSwapUnit}>&#x21CC;</Button>
         </Col>
 
         {/* ### OUTPUT TEXTBOT AND OUTPUT UNIT ### */}
